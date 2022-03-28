@@ -26,8 +26,9 @@ public class Admin extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action=request.getParameter("action");
+		
 		if(action.equals("Adminlogin"))
-		{
+		{ 
 			String uname=request.getParameter("uname");
 			String pass=request.getParameter("pass");
 			AdminBean ab=new AdminBean(uname,pass);

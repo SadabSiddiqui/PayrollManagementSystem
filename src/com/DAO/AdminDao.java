@@ -11,12 +11,14 @@ public class AdminDao {
 
 	public boolean svalidateDB(AdminBean ab) {
 		// TODO Auto-generated method stub
+		String sql="select * from Admin_DB";
 		try{
 			Connection con = DbUtil.getConnection();
+			System.out.println("con"+con);
 			String uname=ab.getUname();
 			String upass=ab.getPass();
 			
-			PreparedStatement pt=con.prepareStatement("select * from Admin_DB");
+			PreparedStatement pt=con.prepareStatement(sql);
 			ResultSet rs=pt.executeQuery();
 			while(rs.next())
 			{
